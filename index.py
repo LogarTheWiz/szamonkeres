@@ -1,24 +1,41 @@
 africa = [];
 asia = [];
 europe = [];
-with open('./forras_europa.csv', 'r' ,encoding='utf-8') as forras:
+with open('./forras_europa.txt', 'r' ,encoding='utf-8') as forras:
     next(forras);
     for sor in forras:
         adatok = sor.strip().split(';');
         country = {'name':adatok[0],'capital':adatok[1],'size':adatok[2],'pop':adatok[3], 'pop/size':adatok[4]};
         europe.append((country));
-with open('./forras_azsia.csv', 'r' ,encoding='utf-8') as forras:
+with open('./forras_azsia.txt', 'r' ,encoding='utf-8') as forras:
     next(forras);
     for sor in forras:
         adatok = sor.strip().split(';');
         country = {'name':adatok[0],'capital':adatok[1],'size':adatok[2],'pop':adatok[3], 'pop/size':adatok[4]};
         asia.append((country));
-with open('./forras_africa.csv', 'r' ,encoding='utf-8') as forras:
+with open('./forras_afrika.txt', 'r' ,encoding='utf-8') as forras:
     next(forras);
     for sor in forras:
         adatok = sor.strip().split(';');
         country = {'name':adatok[0],'capital':adatok[1],'size':adatok[2],'pop':adatok[3], 'pop/size':adatok[4]};
         africa.append((country));
+def sortkey0(e):
+    return e['name'];
+def sortkey1(e):
+    return e['capital'];
+def sortkey2(e):
+    return e['size'];
+def sortkey3(e):
+    return e['pop'];
+def sortkey4(e):
+    return e['pop/size'];
+tempeurope = europe;
+tempasia = asia;
+tempafrica = africa;
+tempeurope.sort(key=sortkey2, reverse=True);
+tempasia.sort(key=sortkey2, reverse=True);
+tempafrica.sort(key=sortkey2, reverse=True);
+print(f'Legnagyobb országok:\n Európa: {tempeurope[0]['name']},{tempeurope[0]['size']} \n Ázsia: {tempasia[0]['name']},{tempasia[0]['size']} \n Afrika: {tempafrica[0]['name']},{tempafrica[0]['size']}')
 
 #Határozd meg, melyik ország rendelkezik a legnagyobb népességgel
 #Határozd meg, melyik ország a legnagyobb területű
