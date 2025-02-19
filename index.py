@@ -61,7 +61,18 @@ africapopsize = [];
 for country in africa:
     africapopsize.append(country['pop/size']);
 print(f'Népesség mediánok:\n Európa:{statistics.median(europepopsize)} \n Ázsia:{statistics.median(asiapopsize)} \n Afrika:{statistics.median(africapopsize)} \n');
-#Számítsd ki az összes ország együttes területét
+europesize = 0;
+for country in europe:
+    europesize += country['size'];
+asiasize = 0;
+for country in asia:
+    asiasize += country['size'];
+africasize = 0;
+for country in africa:
+    africasize += country['size'];
+print(f'Európa:{europesize}');
+print(f'Ázsia:{asiasize}');
+print(f'Afrika:{africasize}');
 #Határozd meg az országok népességének mediánját
 #Listázd ki azokat az országokat, ahol a népsűrűség nagyobb, mint 150 fő/km²
 #Rendezd az országokat területük szerint növekvő sorrendben
