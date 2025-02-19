@@ -92,6 +92,11 @@ for country in asia:
 for country in africa:
     if country['pop/size'] > 150:
         print(f'{country['name']}')
-
+tempeurope = europe;
+tempasia = asia;
+tempafrica = africa;
+tempeurope.sort(key=sortkey2);
+tempasia.sort(key=sortkey2);
+tempafrica.sort(key=sortkey2);
 #Rendezd az országokat területük szerint növekvő sorrendben
 #Csoportosítsd az országokat alacsony (100 alatt), közepes (100–300) és magas (300 felett) népsűrűség kategóriákba.
