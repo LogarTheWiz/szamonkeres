@@ -35,10 +35,14 @@ tempafrica = africa;
 tempeurope.sort(key=sortkey2, reverse=True);
 tempasia.sort(key=sortkey2, reverse=True);
 tempafrica.sort(key=sortkey2, reverse=True);
-print(f'Legnagyobb országok:\n Európa: {tempeurope[0]['name']},{tempeurope[0]['size']} \n Ázsia: {tempasia[0]['name']},{tempasia[0]['size']} \n Afrika: {tempafrica[0]['name']},{tempafrica[0]['size']}')
-
-#Határozd meg, melyik ország rendelkezik a legnagyobb népességgel
-#Határozd meg, melyik ország a legnagyobb területű
+print(f'Legnagyobb országok:\n Európa: {tempeurope[0]['name']},{tempeurope[0]['size']} \n Ázsia: {tempasia[0]['name']},{tempasia[0]['size']} \n Afrika: {tempafrica[0]['name']},{tempafrica[0]['size']}');
+tempeurope = europe;
+tempasia = asia;
+tempafrica = africa;
+tempeurope.sort(key=sortkey3, reverse=True);
+tempasia.sort(key=sortkey3, reverse=True);
+tempafrica.sort(key=sortkey3, reverse=True);
+print(f'Legnépesebb országok:\n Európa: {tempeurope[0]['name']},{tempeurope[0]['pop']} \n Ázsia: {tempasia[0]['name']},{tempasia[0]['pop']} \n Afrika: {tempafrica[0]['name']},{tempafrica[0]['pop']}');
 #Határozd meg, melyik országban a legnagyobb a népsűrűség
 #Számítsd ki az országok átlagos népsűrűségét
 #Számítsd ki az összes ország együttes területét
