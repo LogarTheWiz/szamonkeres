@@ -98,5 +98,27 @@ tempafrica = africa;
 tempeurope.sort(key=sortkey2);
 tempasia.sort(key=sortkey2);
 tempafrica.sort(key=sortkey2);
-#Rendezd az országokat területük szerint növekvő sorrendben
-#Csoportosítsd az országokat alacsony (100 alatt), közepes (100–300) és magas (300 felett) népsűrűség kategóriákba.
+small = [];
+mid = [];
+big = [];
+for country in europe:
+    if country['pop/size'] < 100:
+        small.append(country);
+    if country['pop/size'] < 300 and country['pop/size'] > 100:
+        mid.append(country);
+    if country['pop/size'] > 300:
+        big.append(country);
+for country in asia:
+    if country['pop/size'] < 100:
+        small.append(country);
+    if country['pop/size'] < 300 and country['pop/size'] > 100:
+        mid.append(country);
+    if country['pop/size'] > 300:
+        big.append(country);
+for country in africa:
+    if country['pop/size'] < 100:
+        small.append(country);
+    if country['pop/size'] < 300 and country['pop/size'] > 100:
+        mid.append(country);
+    if country['pop/size'] > 300:
+        big.append(country);
