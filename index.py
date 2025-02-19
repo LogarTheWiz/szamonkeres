@@ -1,3 +1,4 @@
+import statistics;
 africa = [];
 asia = [];
 europe = [];
@@ -50,8 +51,16 @@ tempeurope.sort(key=sortkey4, reverse=True);
 tempasia.sort(key=sortkey4, reverse=True);
 tempafrica.sort(key=sortkey4, reverse=True);
 print(f'Legnagyobb népsűrűségű országok:\n Európa: {tempeurope[0]['name']},{tempeurope[0]['pop/size']} \n Ázsia: {tempasia[0]['name']},{tempasia[0]['pop/size']} \n Afrika: {tempafrica[0]['name']},{tempafrica[0]['pop/size']}');
-#Határozd meg, melyik országban a legnagyobb a népsűrűség
-#Számítsd ki az országok átlagos népsűrűségét
+europepopsize = [];
+for country in europe:
+    europepopsize.append(country['pop/size']);
+asiapopsize = [];
+for country in asia:
+    asiapopsize.append(country['pop/size']);
+africapopsize = [];
+for country in africa:
+    africapopsize.append(country['pop/size']);
+print(f'Népesség mediánok:\n Európa:{statistics.median(europepopsize)} \n Ázsia:{statistics.median(asiapopsize)} \n Afrika:{statistics.median(africapopsize)} \n');
 #Számítsd ki az összes ország együttes területét
 #Határozd meg az országok népességének mediánját
 #Listázd ki azokat az országokat, ahol a népsűrűség nagyobb, mint 150 fő/km²
